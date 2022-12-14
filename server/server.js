@@ -32,7 +32,7 @@ app.get("/qr", (req, res) => {
     const json = req.query.json;
     console.log(getRandomRickRollLink());
     QRCode.toDataURL(getRandomRickRollLink(), (err, url) => {
-        res.send(`<img src="${url}" />`);
+        res.send(`${url}`);
     });
 });
 //Generate Real QR Code
