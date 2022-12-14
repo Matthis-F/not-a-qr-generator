@@ -19,24 +19,25 @@ app.get("/", (req, res) => {
     res.render("index", { title: "Mdrlol" ,userprofile: "Matthis Foulonneau" });
   });
 
+app.get("/qr/real", (req, res) => {
+  request('http://localhost:3000/qr/real?url='+req.query.url, function (error, response, body) {
+    if (!error) {
+      console.log(req.query.url); 
+      res.render("realqr", { title: "Mdrlol" ,qr: body, url: req.query.url });
+    }
+  });
+});
+
 app.get("/qr", (req, res) => {
   request('http://localhost:3000/qr', function (error, response, body) {
     if (!error) {
-      console.log(body) // Show the HTML for the Google homepage. 
+      console.log(req.query.url); 
       res.render("qr", { title: "Mdrlol" ,qr: body, url: req.query.url });
     }
   });
 });
 
-app.get("/qr/real", (req, res) => {
-  url = req.query.url;
-  request('http://localhost:3000/qr/real?url='+url, function (error, response, body) {
-    if (!error) {
-      console.log(body) // Show the HTML for the Google homepage. 
-      res.render("qr", { title: "Mdrlol" ,qr: body });
-    }
-  });
-});
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

@@ -39,6 +39,6 @@ app.get("/qr", (req, res) => {
 app.get("/qr/real", (req, res) => {
     const url = req.query.url;
     QRCode.toDataURL(url, (err, url) => {
-        res.send(`<img src="${url}" />`);
+        res.send(`${url}`);
     });
 });
