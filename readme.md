@@ -6,6 +6,7 @@
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield] : https://img.shields.io/github/contributors/Matthis-F/not-a-qr-generator?style=for-the-badge
+[contributors-url]: https://github.com/Matthis-F/not-a-qr-generator/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Matthis-F/not-a-qr-generator?style=for-the-badge
 [linkedin-url]: https://www.linkedin.com/in/foulonneau/
 
