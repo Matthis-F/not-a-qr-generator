@@ -23,7 +23,7 @@ app.get("/qr/real", (req, res) => {
   request('http://localhost:3000/qr/real?url='+req.query.url, function (error, response, body) {
     if (!error) {
       console.log(req.query.url); 
-      res.render("qr", { title: "Mdrlol" ,qr: body, url: req.query.url });
+      res.render("realqr", { title: "Mdrlol" ,qr: body, url: req.query.url });
     }
   });
 });
