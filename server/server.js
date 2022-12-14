@@ -19,7 +19,8 @@ const rickRolls = [
     "https://www.youtube.com/watch?v=QH2-TGUlwu4",
     "https://www.youtube.com/watch?v=GtL1huin9EE",
     "https://www.youtube.com/watch?v=GBIIQ0kP15E",
-    "https://www.youtube.com/watch?v=xm3YgoEiEDc"
+    "https://www.youtube.com/watch?v=xm3YgoEiEDc",
+    "http://stillrealtous.com/wp-content/uploads/2019/01/Eli-Drake-Talks-To-Still-Real-To-Us-1.jpg"
 ];
 
 function getRandomRickRollLink() {
