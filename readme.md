@@ -20,7 +20,7 @@
     A very simple web app intended as a school project, this project was used to learn CI/CD and Unit Testing
     <br />
     <br />
-    <a href="https://github.com/Matthis-F/not-a-qr-generator/">View Demo</a>
+    <a href="qr.foulonneau.com">View Demo</a>
     ·
     <a href="https://github.com/Matthis-F/not-a-qr-generator/issues">Report Bug</a>
     ·
