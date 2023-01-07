@@ -1,15 +1,8 @@
 <a name="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Forks][forks-shield]][forks-url]
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield] : https://img.shields.io/github/contributors/Matthis-F/not-a-qr-generator?style=for-the-badge
-[contributors-url]: https://github.com/Matthis-F/not-a-qr-generator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Matthis-F/not-a-qr-generator?style=for-the-badge
-[linkedin-url]: https://www.linkedin.com/in/foulonneau/
-
+[![Contributors](https://img.shields.io/github/contributors/Matthis-F/not-a-qr-generator?style=for-the-badge)](https://github.com/Matthis-F/not-a-qr-generator/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/Matthis-F/not-a-qr-generator?style=for-the-badge)](https://github.com/Matthis-F/not-a-qr-generator/network/members)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Matthis%20Foulonneau-blue?style=for-the-badge)](https://www.linkedin.com/in/foulonneau/)
 
 <br />
 <div align="center">
