@@ -1,0 +1,18 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='views/style.css')
+  title Not A QR generator
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,700&display=swap' rel='stylesheet')
+.main-view
+  h1#header-gradient.text-gradient Not A QR generator
+  h2 This is definitely not a qr code generator
+  h3 Enter text to generate a perfectly functional QR code*
+  .actions
+    form(action='/result' method='GET')
+      input.text-input(type='text' name='url' placeholder='Enter your url here')
+      input.classic-button(type='submit' value='Generate')
