@@ -19,8 +19,7 @@ const rickRolls = [
     "https://www.youtube.com/watch?v=QH2-TGUlwu4",
     "https://www.youtube.com/watch?v=GtL1huin9EE",
     "https://www.youtube.com/watch?v=GBIIQ0kP15E",
-    "https://www.youtube.com/watch?v=xm3YgoEiEDc",
-    "http://stillrealtous.com/wp-content/uploads/2019/01/Eli-Drake-Talks-To-Still-Real-To-Us-1.jpg"
+    "https://www.youtube.com/watch?v=xm3YgoEiEDc"
 ];
 
 function getRandomRickRollLink() {
@@ -33,13 +32,13 @@ app.get("/qr", (req, res) => {
     const json = req.query.json;
     console.log(getRandomRickRollLink());
     QRCode.toDataURL(getRandomRickRollLink(), (err, url) => {
-        res.send(`${url}`);
+        res.send(url);
     });
 });
 //Generate Real QR Code
 app.get("/qr/real", (req, res) => {
     const url = req.query.url;
     QRCode.toDataURL(url, (err, url) => {
-        res.send(`${url}`);
+        res.send(url);
     });
 });
