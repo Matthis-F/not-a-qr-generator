@@ -10,7 +10,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://qr.foulonneau.com/">
     <img src="ressources/logo.svg" alt="Logo" width="150" height="150"   >
   </a>
 
