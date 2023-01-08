@@ -17,10 +17,10 @@ jobs:
         run: |
           cd ./webapp
           docker build . -t matthisfoulonneau/not-a-qr-generator-webapp:latest -f Dockerfile
-      - name: Change directory to server
-        run: cd ../server
       - name: Build server
-        run: docker build -t matthisfoulonneau/not-a-qr-generator-api-server:latest .
+        run: \
+          cd ../server
+          docker build -t matthisfoulonneau/not-a-qr-generator-api-server:latest .
       - name: Push webapp
         run: docker push matthisfoulonneau/not-a-qr-generator-webapp:latest
       - name: Push server
