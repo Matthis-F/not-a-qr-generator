@@ -57,5 +57,11 @@ jobs:
 
           # Stop the containers
           docker stop api webapp
-
-
+  push-to-production:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Webhook to update Server
+        run: curl -X POST https://docker.foulonneau.com/api/webhooks/0d2eb1f1-885d-43d8-9d53-7c110a97298a
+      - name: Send Webhook to update Webapp
+        run: curl -X POST https://docker.foulonneau.com/api/webhooks/a692df97-ec31-449f-a71a-2cf96286caf5
