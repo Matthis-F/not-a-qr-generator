@@ -16,6 +16,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: Unit test Webapp
+        run: |
+          cd ./webapp
+          npm install && npm run test
       - name: Build webapp
         run: |
           cd ./webapp
@@ -28,3 +32,29 @@ jobs:
         run: docker push matthisfoulonneau/not-a-qr-generator-webapp:latest
       - name: Push server
         run: docker push matthisfoulonneau/not-a-qr-generator-api-server:latest
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test containers
+        run: |
+          # Start the API container
+          docker run -d --name api -p 3000:3000 matthisfoulonneau/not-a-qr-generator-api-server:latest
+
+          # Start the webapp container
+          docker run -d --name webapp -p 8080:8080 matthisfoulonneau/not-a-qr-generator-webapp:latest
+
+          # Wait for the containers to start
+          sleep 10
+
+          # Test the API
+          curl localhost:3000/qr
+          curl localhost:3000/qr/real
+
+          # Test the webapp
+          curl localhost:8080
+
+          # Stop the containers
+          docker stop api webapp
+
+
