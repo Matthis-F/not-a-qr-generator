@@ -16,11 +16,11 @@ jobs:
       - name: Change directory to webapp
         run: cd webapp
       - name: Build webapp
-        run: docker build . -t matthisfoulonneau/not-a-qr-generator-webapp:latest
+        run: docker build -t matthisfoulonneau/not-a-qr-generator-webapp:latest .
       - name: Change directory to server
         run: cd ../server
       - name: Build server
-        run: docker build . -t matthisfoulonneau/not-a-qr-generator-api-server:latest
+        run: docker build -t matthisfoulonneau/not-a-qr-generator-api-server:latest .
       - name: Push webapp
         run: docker push matthisfoulonneau/not-a-qr-generator-webapp:latest
       - name: Push server
