@@ -1,49 +1,11 @@
 //Create web app using pug that calls the /qr/real endpoint
 
 const express = require('express');
-const http = require('http');
 const path = require("path");
 const app = express();
 const port = 8080;
 const apiServerBaseurl = "http://api_server:3000";
-
-async function getFakeQR(apiServerBaseurl) {
-  return new Promise((resolve, reject) => {
-    http.get(apiServerBaseurl+'/qr', (resp) => {
-      let data = '';
-
-      resp.on('data', (chunk) => {
-        data += chunk;
-      });
-
-      resp.on('end', () => {
-        resolve(data);
-      });
-
-    }).on("error", (err) => {
-      reject(err);
-    });
-  });
-}
-
-async function getRealQR(urlToEncode,apiServerBaseurl) {
-    return new Promise((resolve, reject) => {
-      http.get(apiServerBaseurl+'/qr/real?url='+urlToEncode, (resp) => {
-        let data = '';
-  
-        resp.on('data', (chunk) => {
-          data += chunk;
-        });
-  
-        resp.on('end', () => {
-          resolve(data);
-        });
-  
-      }).on("error", (err) => {
-        reject(err);
-      });
-    });
-  }
+const { getFakeQR, getRealQR } = require('./qr-api-calls');
 
 app.set('view engine', 'pug');
 
@@ -68,3 +30,9 @@ console.log("Starting Webapp");
 app.listen(port, () => {
     console.log(`Webapp listening at http://localhost:${port}`);
 });
+
+// Export functions for unit testing
+module.exports = {
+    getFakeQR,
+    getRealQR
+};
