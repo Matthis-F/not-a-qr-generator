@@ -18,7 +18,7 @@ jobs:
           cd ./webapp
           docker build . -t matthisfoulonneau/not-a-qr-generator-webapp:latest -f Dockerfile
       - name: Build server
-        run: \
+        run: |
           cd ../server
           docker build -t matthisfoulonneau/not-a-qr-generator-api-server:latest .
       - name: Push webapp
