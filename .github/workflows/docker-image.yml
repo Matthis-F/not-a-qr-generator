@@ -64,4 +64,4 @@ jobs:
       - name: Send Webhook to update Server
         run: curl -X POST ${{ secrets.PORTAINER_SERVER_HOOK }}
       - name: Send Webhook to update Webapp
-        run: curl -X POST ${{ secrets.PORTAINER_WEBAPP_HOOK }}
+        run: curl -X POST ${{ secrets.PORTAINTER_WEBAPP_HOOK }}
