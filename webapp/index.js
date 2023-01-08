@@ -7,7 +7,7 @@ const app = express();
 const port = 8080;
 const apiServerBaseurl = "http://api_server:3000";
 
-async function getFakeQR() {
+async function getFakeQR(apiServerBaseurl) {
   return new Promise((resolve, reject) => {
     http.get(apiServerBaseurl+'/qr', (resp) => {
       let data = '';
@@ -26,9 +26,9 @@ async function getFakeQR() {
   });
 }
 
-async function getRealQR(url) {
+async function getRealQR(urlToEncode,apiServerBaseurl) {
     return new Promise((resolve, reject) => {
-      http.get(apiServerBaseurl+'/qr/real?url='+url, (resp) => {
+      http.get(apiServerBaseurl+'/qr/real?url='+urlToEncode, (resp) => {
         let data = '';
   
         resp.on('data', (chunk) => {
@@ -57,8 +57,8 @@ app.get("/result", async (req, res) => {
     // Get text variables inside url
     const url = req.query.url;
     // wait for async function to finish
-    const fakeqr = await getFakeQR();
-    const realqr = await getRealQR(url);
+    const fakeqr = await getFakeQR(apiServerBaseurl);
+    const realqr = await getRealQR(url,apiServerBaseurl);
 
     // Render result page
     res.render("result", { title: "QR", fake:fakeqr, real:realqr});
