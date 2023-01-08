@@ -1,0 +1,27 @@
+version: '3'
+services:
+  not-a-qr-generator-webapp:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    image: not-a-qr-generator-webapp:latest
+    container_name: webapp
+    ports:
+      - "8080:8080"
+    depends_on:
+      - not-a-qr-generator-api-server
+    networks:
+      - app-network
+  not-a-qr-generator-api-server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: not-a-qr-generator-server:latest
+    container_name: api_server
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge

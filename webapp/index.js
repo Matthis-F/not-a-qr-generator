@@ -3,13 +3,13 @@
 const express = require('express');
 const http = require('http');
 const path = require("path");
-
 const app = express();
 const port = 8080;
+const apiServerBaseurl = "http://api_server:3000";
 
 async function getFakeQR() {
   return new Promise((resolve, reject) => {
-    http.get('http://localhost:3000/qr', (resp) => {
+    http.get(apiServerBaseurl+'/qr', (resp) => {
       let data = '';
 
       resp.on('data', (chunk) => {
@@ -28,7 +28,7 @@ async function getFakeQR() {
 
 async function getRealQR(url) {
     return new Promise((resolve, reject) => {
-      http.get('http://localhost:3000/qr/real?url='+url, (resp) => {
+      http.get(apiServerBaseurl+'/qr/real?url='+url, (resp) => {
         let data = '';
   
         resp.on('data', (chunk) => {
@@ -44,9 +44,6 @@ async function getRealQR(url) {
       });
     });
   }
-  
-
-
 
 app.set('view engine', 'pug');
 
@@ -67,7 +64,7 @@ app.get("/result", async (req, res) => {
     res.render("result", { title: "QR", fake:fakeqr, real:realqr});
 });
 
-console.log("Starting webapp");
+console.log("Starting Webapp");
 app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+    console.log(`Webapp listening at http://localhost:${port}`);
 });

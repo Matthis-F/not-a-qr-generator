@@ -30,9 +30,19 @@
 
 ## Table of Contents
 
-* [About The Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [API](#api)
+    - [Build and run](#build-and-run)
+    - [Development](#development)
+    - [API Documentation](#api-documentation)
+  - [Webapp](#webapp)
+    - [Build and run](#build-and-run-1)
+    - [Development](#development-1)
+- [Contact](#contact)
+- [License](#license)
 
 
 
