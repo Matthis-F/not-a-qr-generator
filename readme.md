@@ -63,11 +63,11 @@ It also has the capability to generate real QR codes from the original text inpu
 
 ## Getting Started
 ### API
-#### Build and run
+#### Build and run (Production)
 ```sh
 cd server
 npm install
-npm run start
+npm start
 ```
 #### Development
 ```sh
@@ -76,24 +76,29 @@ npm install
 npm run dev
 ```
 #### API Documentation
-Only two endpoints are available, one to get a random Rickroll QR code and one to get a Rickroll QR code from the text input.
+Only two endpoints are available, one to get a random Rickroll QR code and one to get a Real QR code from the text input.
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | GET | /api/qr | Get a random Rickroll QR code |
-| GET | /api/qr/real?text | Get a Rickroll QR code from the text input |
+| GET | /api/qr/real?text | Get a Real QR code from the text input |
 
 ### Webapp
-#### Build and run
+#### Build and run (Production)
 ```sh
 cd webapp
 npm install
-npm run start
+npm start
 ```
 #### Development
 ```sh
 cd webapp
 npm install
 npm run dev
+```
+#### Unit Tests
+```sh
+cd webapp
+npm run test
 ```
 
 ## Contact
