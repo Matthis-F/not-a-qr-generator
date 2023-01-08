@@ -5,7 +5,7 @@
 [![Contributors](https://img.shields.io/github/contributors/Matthis-F/not-a-qr-generator?style=for-the-badge)](https://github.com/Matthis-F/not-a-qr-generator/graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/Matthis-F/not-a-qr-generator?style=for-the-badge)](https://github.com/Matthis-F/not-a-qr-generator/network/members)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Matthis%20Foulonneau-blue?style=for-the-badge)](https://www.linkedin.com/in/foulonneau/)
-
+[Build Status](https://img.shields.io/github/actions/workflow/status/Matthis-F/not-a-qr-generator/docker-image.yml?style=for-the-badge&branch=main)
 </div>
 
 <br />
